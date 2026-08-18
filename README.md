@@ -1,1 +1,1 @@
-A collection of solutions to various Codewars problems! - Created using [CodeHub](https://github.com/FebinBellamy/CodeHub)
+A collection of my daily algorithmic problem-solving challenges focused on optimizing time and space complexity. Syncing my solutions here to demonstrate active skill development and technical dedication - Created using [CodeHub](https://github.com/FebinBellamy/CodeHub)
