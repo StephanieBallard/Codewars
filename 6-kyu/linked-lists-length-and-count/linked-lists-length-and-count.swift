@@ -7,8 +7,8 @@ class Node {
 }
 ​
 func length(_ head: Node?) -> Int {
-    var total = 0
     var current = head
+    var total = 0
 ​
     while let node = current {
         total += 1
@@ -19,8 +19,8 @@ func length(_ head: Node?) -> Int {
 }
 ​
 func count(_ head: Node?, _ data: Int) -> Int {
-    var total = 0
     var current = head
+    var total = 0
 ​
     while let node = current {
         if node.data == data {
