@@ -7,7 +7,7 @@ class Node {
     }
 }
 ​
-func push(_ head: Node?, _ data: Int) -> Node {
+func push(_ head:Node?, _ data:Int) -> Node {
     let newNode = Node(data)
     newNode.next = head
 ​
@@ -21,3 +21,4 @@ func buildOneTwoThree() -> Node {
 ​
     return head
 }
+​
