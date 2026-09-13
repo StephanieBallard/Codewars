@@ -33,4 +33,3 @@ func insertNth(_ head: Node?, _ index: Int, _ data: Int) throws -> Node? {
 ​
     throw LinkedListError.invalidIndex
 }
-​
