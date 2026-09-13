@@ -4,20 +4,16 @@ enum LinkedListError: Error {
 ​
 func insertNth(_ head: Node?, _ index: Int, _ data: Int) throws -> Node? {
     var current = head
-    var previous: Node? = nil
     var counter = 0
+    var previous: Node? = nil
 ​
     if index == 0 {
-        let newNode = Node(data)
-        newNode.next = head
-​
-        return newNode
+        return push(current, data)
     }
 ​
     while let node = current {
         if counter == index {
-            let newNode = Node(data)
-            newNode.next = current
+            let newNode = push(node, data)
             previous?.next = newNode
 ​
             return head
@@ -29,7 +25,7 @@ func insertNth(_ head: Node?, _ index: Int, _ data: Int) throws -> Node? {
     }
 ​
     if counter == index {
-        let newNode = Node(data)
+        let newNode = push(current, data)
         previous?.next = newNode
 ​
         return head
