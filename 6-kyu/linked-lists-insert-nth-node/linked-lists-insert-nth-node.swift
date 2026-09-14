@@ -1,15 +1,15 @@
 enum LinkedListError: Error {
-    case invalidIndex
+    case indexOutOfRange
 }
 ​
 func insertNth(_ head: Node?, _ index: Int, _ data: Int) throws -> Node? {
-    var current = head
-    var counter = 0
-    var previous: Node? = nil
-​
     if index == 0 {
-        return push(current, data)
+        return push(head, data)
     }
+​
+    var current = head
+    var previous: Node? = nil
+    var counter = 0
 ​
     while let node = current {
         if counter == index {
@@ -31,5 +31,5 @@ func insertNth(_ head: Node?, _ index: Int, _ data: Int) throws -> Node? {
         return head
     }
 ​
-    throw LinkedListError.invalidIndex
+    throw LinkedListError.indexOutOfRange
 }
