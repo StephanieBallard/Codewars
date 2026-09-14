@@ -1,13 +1,13 @@
+enum LinkedListError: Error {
+    case indexOutOfRange
+}
+​
 class Node {
     var data: Int
     var next: Node?
     init(_ data: Int) {
         self.data = data
     }
-}
-​
-enum LinkedListError: Error {
-    case invalidIndex
 }
 ​
 func getNth(_ head: Node?, _ index: Int) throws -> Node? {
@@ -23,5 +23,6 @@ func getNth(_ head: Node?, _ index: Int) throws -> Node? {
         current = node.next
     }
 ​
-    throw LinkedListError.invalidIndex
+    throw LinkedListError.indexOutOfRange
 }
+​
