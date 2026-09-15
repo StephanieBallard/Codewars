@@ -6,32 +6,23 @@ class Node {
     }
 }
 ​
-enum LinkedListError: Error {
-    case invalidIndex
-}
-​
 func sortedInsert(_ head: Node?, _ data: Int) -> Node? {
-    var current = head
-    var previous: Node? = nil
+    let newNode = Node(data)
 ​
-    while let node = current {
-        if data <= node.data {
-            let newNode = push(node, data)
-​
-            if previous == nil {
-                return newNode
-            }
-​
-            previous?.next = newNode
-            return head
-        }
-​
-        previous = node
-        current = node.next
+    guard let head = head, data > head.data else {
+        newNode.next = head
+        return newNode
     }
 ​
-    let newNode = push(nil, data)
-    previous?.next = newNode
+    var tail = head
 ​
-    return head ?? newNode
+    while let next = tail.next, next.data < data {
+        tail = next
+    }
+​
+    newNode.next = tail.next
+    tail.next = newNode
+​
+    return head
 }
+​
