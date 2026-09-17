@@ -7,21 +7,17 @@ class Node {
 }
 ​
 func sortedInsert(_ head: Node?, _ data: Int) -> Node? {
-    let newNode = Node(data)
-​
     guard let head = head, data > head.data else {
-        newNode.next = head
-        return newNode
+        return push(head, data)
     }
 ​
-    var tail = head
+    var current = head
 ​
-    while let next = tail.next, next.data < data {
-        tail = next
+    while let next = current.next, next.data < data {
+        current = next
     }
 ​
-    newNode.next = tail.next
-    tail.next = newNode
+    current.next = push(current.next, data)
 ​
     return head
 }
